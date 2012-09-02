@@ -29,6 +29,7 @@ module.exports = function() {
   this.use(poweredBy('Locomotive'));
   this.use(express.logger());
   this.use(express.favicon());
+  this.use(require('less-middleware')({ src: __dirname + '/../../public' }));
   this.use(express.static(__dirname + '/../../public'));
   this.use(express.bodyParser());
   this.use(this.router);
