@@ -5,6 +5,13 @@
 // `function(req, res, next)` is also fully supported.  Consult the Locomotive
 // Guide on [routing](http://locomotivejs.org/guide/routing.html) for additional
 // information.
+var passport = require('./passport');
+
 module.exports = function routes() {
   this.root('pages#main');
+
+  this.match('login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+  }), { via: 'post' });
 }

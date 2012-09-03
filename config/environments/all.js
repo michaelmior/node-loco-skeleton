@@ -1,6 +1,7 @@
 var express = require('express')
   , poweredBy = require('connect-powered-by')
-  , util = require('util');
+  , util = require('util')
+  , passport = require('../passport');
 
 module.exports = function() {
   // Warn of version mismatch between global "lcm" binary and local installation
@@ -17,6 +18,9 @@ module.exports = function() {
   // Register Handlebars as a template engine for html.
   this.engine('hbs', require('consolidate').handlebars);
 
+  // Register the Mongoose adapter for our datastore
+  this.datastore(require('locomotive-mongoose'));
+
   // Register formats for content negotiation.  Using content negotiation,
   // different formats can be served as needed by different clients.  For
   // example, a browser is sent an HTML response, while an API client is sent a
@@ -31,6 +35,10 @@ module.exports = function() {
   this.use(express.favicon());
   this.use(require('less-middleware')({ src: __dirname + '/../../public' }));
   this.use(express.static(__dirname + '/../../public'));
+  this.use(express.cookieParser());
   this.use(express.bodyParser());
+  this.use(express.session({ secret: 'hr{@"ca69EfN;*>J7wy:-yVs&^}]b1C]&96N|[[{^xb&<B>jp*%D[[7gEqaU]%Q}' }));
+  this.use(passport.initialize());
+  this.use(passport.session());
   this.use(this.router);
-}
+};
