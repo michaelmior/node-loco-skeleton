@@ -13,10 +13,10 @@ module.exports = function() {
   // Configure application settings.  Consult the Express API Reference for a
   // list of the available [settings](http://expressjs.com/api.html#app-settings).
   this.set('views', __dirname + '/../../app/views');
-  this.set('view engine', 'hbs');
+  this.set('view engine', 'dust');
 
-  // Register Handlebars as a template engine for html.
-  this.engine('hbs', require('consolidate').handlebars);
+  // Register Dust as a template engine for html.
+  this.engine('dust', require('consolidate').dust);
 
   // Register the Mongoose adapter for our datastore
   this.datastore(require('locomotive-mongoose'));
