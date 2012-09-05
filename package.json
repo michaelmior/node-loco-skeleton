@@ -12,7 +12,7 @@
     "passport": "0.1.x",
     "passport-local": "0.1.x",
     "bcrypt": "0.7.x",
-    "mongoose": "3.1.x"
+    "mongoose": "3.1.x",
     "locomotive-mongoose": "0.1.x"
   }
 }
