@@ -1,0 +1,28 @@
+{>"app/views/base.html.dust"/}
+{<title}Sign up{/title}
+{<content}
+  <h1>Sign up</h1>
+  <form method="POST">
+    <div class="control-group">
+      <label class="control-label" for="input-email">Email</label>
+      <div class="controls">
+        <input type="text" id="input-email" name="email" placeholder="Email">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-password">Password</label>
+      <div class="controls">
+        <input type="password" id="input-password" name="password" placeholder="Password">
+      </div>
+    </div>
+    <div class="control-group">
+      <label class="control-label" for="input-password">Confirm password</label>
+      <div class="controls">
+        <input type="password" id="input-confirm-password" name="confirm-password" placeholder="Confirm Password">
+      </div>
+    </div>
+    <div class="control-group">
+      <button type="submit" class="btn">Sign up</button>
+    </div>
+  </form>
+{/content}

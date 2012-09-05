@@ -1,5 +1,6 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose')
+  , models = require('../../app/models');
 
 module.exports = function() {
-  mongoose.connection.open(this.get('mongodb uri'));
+  mongoose.connect(this.get('mongodb uri'));
 }
