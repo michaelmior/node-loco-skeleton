@@ -13,13 +13,17 @@ PagesController.login = function() {
   this.render();
 }
 
+PagesController.logout = function() {
+  this.req.logOut();
+  this.res.redirect('/');
+}
+
 PagesController.signup = function() {
   if (this.req.method == 'GET') {
     this.render();
   } else {
     var controller = this;
     User.registerUser(this.param('email'), this.param('password'), function(err, user) {
-      console.log(user);
       if (err) {
         controller.error(err);
       } else {

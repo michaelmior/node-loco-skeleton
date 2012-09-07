@@ -40,5 +40,9 @@ module.exports = function() {
   this.use(express.session({ secret: 'hr{@"ca69EfN;*>J7wy:-yVs&^}]b1C]&96N|[[{^xb&<B>jp*%D[[7gEqaU]%Q}' }));
   this.use(passport.initialize());
   this.use(passport.session());
+  this.use(function(req, res, next) {
+    res.locals.user = req.user;
+    next();
+  });
   this.use(this.router);
 };

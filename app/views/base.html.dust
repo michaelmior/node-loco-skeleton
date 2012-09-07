@@ -10,6 +10,17 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <ul class="nav">
+          {?user}
+            <li><a href="/logout">Logout</a></li>
+          {:else}
+            <li><a href="/signin">Sign in</a></li>
+          {/user}
+        </ul>
+      </div>
+    </div>
     <div class="container">
       {+content/}
     </div>

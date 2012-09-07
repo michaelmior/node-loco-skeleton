@@ -15,6 +15,7 @@ module.exports = function routes() {
     successRedirect: '/',
     failureRedirect: '/login'
   }), { via: 'post' });
+  this.match('logout', 'pages#logout');
 
   this.match('signup', 'pages#signup', { via: ['get', 'post'] });
 }
