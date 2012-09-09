@@ -6,13 +6,14 @@
     "locomotive": "0.3.x",
     "express": "3.x.x",
     "connect-powered-by": "0.1.x",
-    "linkedin-dust": "1.0.x",
+    "dustjs-linkedin": "1.0.x",
     "consolidate": "0.4.x",
     "less-middleware": "0.1.x",
     "passport": "0.1.x",
     "passport-local": "0.1.x",
     "bcrypt": "0.7.x",
     "mongoose": "3.1.x",
-    "locomotive-mongoose": "0.1.x"
+    "locomotive-mongoose": "0.1.x",
+    "requireindex": "0.1.x"
   }
 }
