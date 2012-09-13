@@ -4,6 +4,8 @@ var express = require('express')
   , passport = require('../passport');
 
 module.exports = function() {
+  var app = this;
+
   // Warn of version mismatch between global "lcm" binary and local installation
   // of Locomotive.
   if (this.version !== require('locomotive').version) {
@@ -31,7 +33,22 @@ module.exports = function() {
   // middleware is built-in, with additional [third-party](https://github.com/senchalabs/connect/wiki)
   // middleware available as separate modules.
   this.use(poweredBy('Locomotive'));
-  this.use(express.logger());
+
+  // Replace default logging with winston and
+  // extend express with winston logging methods
+  var logger = new (require('winston').Logger)({
+    transports: []
+  });
+  this.use(express.logger({
+    stream: {
+      write: function(message, encoding) {
+        logger.info(message);
+      }
+    }
+  }));
+  logger.extend(this);
+  this.set('logger', logger);
+
   this.use(express.favicon());
   this.use(require('less-middleware')({ src: __dirname + '/../../public' }));
   this.use(express.static(__dirname + '/../../public'));

@@ -17,6 +17,7 @@
     "bcrypt": "0.7.x",
     "mongoose": "3.1.x",
     "locomotive-mongoose": "0.1.x",
-    "requireindex": "0.1.x"
+    "requireindex": "0.1.x",
+    "winston": "0.6.x"
   }
 }
