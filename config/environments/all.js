@@ -46,6 +46,7 @@ module.exports = function() {
       }
     }
   }));
+
   logger.extend(this);
   this.set('logger', logger);
 
