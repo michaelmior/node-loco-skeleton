@@ -16,7 +16,7 @@
           {?user}
             <li><a href="/logout">Logout</a></li>
           {:else}
-            <li><a href="/signin">Sign in</a></li>
+            <li><a href="/login">Sign in</a></li>
           {/user}
         </ul>
       </div>
