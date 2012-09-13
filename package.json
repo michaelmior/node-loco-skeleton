@@ -10,7 +10,7 @@
     "express": "3.x.x",
     "connect-powered-by": "0.1.x",
     "dustjs-linkedin": "1.0.x",
-    "consolidate": "0.4.x",
+    "consolidate": "0.3.x",
     "less-middleware": "0.1.x",
     "passport": "0.1.x",
     "passport-local": "0.1.x",
