@@ -18,4 +18,4 @@ module.exports = function routes() {
   this.match('logout', 'pages#logout');
 
   this.match('signup', 'pages#signup', { via: ['get', 'post'] });
-}
+};

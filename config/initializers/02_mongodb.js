@@ -3,4 +3,4 @@ var mongoose = require('mongoose')
 
 module.exports = function() {
   mongoose.connect(this.get('mongodb uri'));
-}
+};

@@ -6,4 +6,4 @@ module.exports = function() {
     'application/x-foo': ['foo']
   });
   */
-}
+};

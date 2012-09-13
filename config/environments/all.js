@@ -52,7 +52,7 @@ module.exports = function() {
 
   this.use(express.favicon());
   this.use(require('less-middleware')({ src: __dirname + '/../../public' }));
-  this.use(express.static(__dirname + '/../../public'));
+  this.use(express['static'](__dirname + '/../../public'));
   this.use(express.cookieParser());
   this.use(express.bodyParser());
   this.use(express.session({ secret: 'hr{@"ca69EfN;*>J7wy:-yVs&^}]b1C]&96N|[[{^xb&<B>jp*%D[[7gEqaU]%Q}' }));

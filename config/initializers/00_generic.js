@@ -8,4 +8,4 @@ module.exports = function() {
   // `done` is a callback which must be invoked when the initializer is
   // finished.  Initializers are invoked sequentially, ensuring that the
   // previous one has completed before the next one executes.
-}
+};

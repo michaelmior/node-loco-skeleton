@@ -16,4 +16,4 @@ module.exports = function() {
   });
 
   this.use(express.errorHandler());
-}
+};
