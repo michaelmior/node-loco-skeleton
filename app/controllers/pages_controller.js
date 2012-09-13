@@ -5,21 +5,21 @@ var locomotive = require('locomotive')
 var PagesController = new Controller();
 
 PagesController.main = function() {
-  this.title = 'Locomotive'
+  this.title = 'Locomotive';
   this.render();
-}
+};
 
 PagesController.login = function() {
   this.render();
-}
+};
 
 PagesController.logout = function() {
   this.req.logOut();
   this.res.redirect('/');
-}
+};
 
 PagesController.signup = function() {
-  if (this.req.method == 'GET') {
+  if (this.req.method === 'GET') {
     this.render();
   } else {
     var controller = this;
@@ -31,6 +31,6 @@ PagesController.signup = function() {
       }
     });
   }
-}
+};
 
 module.exports = PagesController;

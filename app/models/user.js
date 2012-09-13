@@ -7,10 +7,10 @@ var userSchema = new mongoose.Schema({
 });
 
 userSchema.statics.registerUser = function(email, password, cb) {
-  var model = this;
+  var Model = this;
 
   bcrypt.hash(password, 8, function(err, hash) {
-    var user = new model({ email:email, hash:hash });
+    var user = new Model({ email:email, hash:hash });
     user.save(function(err) {
       cb(err, user);
     });
