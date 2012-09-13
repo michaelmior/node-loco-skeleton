@@ -42,7 +42,7 @@ module.exports = function() {
   this.use(express.logger({
     stream: {
       write: function(message, encoding) {
-        logger.info(message);
+        logger.info(message.trim());
       }
     }
   }));
