@@ -51,7 +51,11 @@ module.exports = function() {
   this.set('logger', logger);
 
   this.use(express.favicon());
-  this.use(require('less-middleware')({ src: __dirname + '/../../public' }));
+  this.use(require('less-middleware')({
+    src: __dirname + '/../../src/less',
+    dest: __dirname + '/../../public/css',
+    prefix: '/css'
+  }));
   this.use(express['static'](__dirname + '/../../public'));
   this.use(express.cookieParser());
   this.use(express.bodyParser());

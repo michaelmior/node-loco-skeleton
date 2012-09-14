@@ -11,7 +11,7 @@
     "connect-powered-by": "0.1.x",
     "dustjs-linkedin": "1.0.x",
     "consolidate": "0.3.x",
-    "less-middleware": "0.1.x",
+    "less-middleware": ">=0.1.6 <0.2.0",
     "passport": "0.1.x",
     "passport-local": "0.1.x",
     "bcrypt": "0.7.x",
