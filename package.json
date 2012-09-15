@@ -6,19 +6,19 @@
     "start": "lcm server"
   },
   "dependencies": {
-    "locomotive": "0.3.x",
-    "express": "3.x.x",
-    "connect-powered-by": "0.1.x",
-    "dustjs-linkedin": "1.0.x",
-    "consolidate": "0.3.x",
-    "less-middleware": ">=0.1.6 <0.2.0",
-    "passport": "0.1.x",
-    "passport-local": "0.1.x",
-    "bcrypt": "0.7.x",
-    "mongoose": "3.1.x",
-    "locomotive-mongoose": "0.1.x",
-    "requireindex": "0.1.x",
-    "winston": "0.6.x",
-    "grunt": "0.3.x"
+    "locomotive": "~0.3.1",
+    "express": "~3.0.0",
+    "connect-powered-by": "~0.1.0",
+    "dustjs-linkedin": "~1.0.0",
+    "consolidate": "~0.3.1",
+    "less-middleware": "~0.1.6",
+    "passport": "~0.1.12",
+    "passport-local": "~0.1.6",
+    "bcrypt": "~0.7.2",
+    "mongoose": "~3.1.2",
+    "locomotive-mongoose": "~0.1.0",
+    "requireindex": "~0.1.8",
+    "winston": "~0.6.2",
+    "grunt": "~0.3.15"
   }
 }
