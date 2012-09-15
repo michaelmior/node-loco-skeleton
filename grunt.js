@@ -1,13 +1,20 @@
 /*global module:false*/
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-simple-mocha');
 
   // Project configuration.
   grunt.initConfig({
     lint: {
-      files: ['grunt.js', 'app/**/*.js', 'config/**/*.js', 'test/**/*.js']
+      app: ['grunt.js', 'app/**/*.js', 'config/**/*.js'],
+      test: ['test/**/*.js']
     },
-    test: {
-      files: ['test/**/*.js']
+    mocha: {
+      all: {
+        src: ['test/**/*.js'],
+        options: {
+          reporter: 'spec'
+        }
+      }
     },
     watch: {
       files: '<config:lint.files>',
@@ -26,9 +33,18 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         node: true
+      },
+      test: {
+        globals: {
+          describe: true,
+          it: true
+        }
       }
     }
   });
+
+  // Run tests using Mocha
+  grunt.registerTask('test', 'mocha');
 
   // Default task.
   grunt.registerTask('default', 'lint test');
