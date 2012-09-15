@@ -22,10 +22,14 @@ describe('routes', function() {
 
   // Test that the actions for the above controllers
   // map to GET requests at the specified URLs
-  for (var controller in route_map) {
-    for (var action in route_map[controller]) {
-      describe(controller, function() {
-        describe(action, function() {
+  for (var key1 in route_map) {
+    for (var key2 in route_map[key1]) {
+      describe(key1, function() {
+        var controller = key1;
+
+        describe(key2, function() {
+          var action = key2;
+
           it('should map to ' + route_map[controller][action], function() {
             var route = router.find(controller, action);
 
