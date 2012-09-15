@@ -1,7 +1,7 @@
-var express = require('express')
-  , poweredBy = require('connect-powered-by')
-  , util = require('util')
-  , passport = require('../passport');
+var express = require('express'),
+    poweredBy = require('connect-powered-by'),
+    util = require('util'),
+    passport = require('../passport');
 
 module.exports = function() {
   var app = this;

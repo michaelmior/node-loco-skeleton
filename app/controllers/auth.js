@@ -1,6 +1,6 @@
-var locomotive = require('locomotive')
-  , Controller = locomotive.Controller
-  , User = require('../models/user');
+var locomotive = require('locomotive'),
+    Controller = locomotive.Controller,
+    User = require('../models/user');
 
 var AuthController = new Controller();
 
