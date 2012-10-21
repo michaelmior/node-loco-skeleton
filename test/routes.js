@@ -1,43 +1,45 @@
 /*jshint loopfunc:true */
 
-var should = require('should'),
+var vows = require('vows'),
+    should = require('should'),
     Router = require('locomotive/lib/locomotive/router'),
     routes = require('../config/routes');
 
-describe('routes', function() {
-  var router = new Router(require('locomotive'));
-  router.init(require('express')());
-  router.draw(routes);
+function resolvesTo(path) {
+  var context = {
+    topic: function(controller) {
+      // Apply the routes
+      var router = new Router(require('locomotive'));
+      router.init(require('express')());
+      router.draw(routes);
 
-  var route_map = {
-    'AuthController': {
-      'login': '/login',
-      'signup': '/signup',
-      'logout': '/logout'
-    },
-    'PagesController': {
-      'main': '/'
+      // Extract the name of the controller and action
+      var req = this.context.name.split(/[ \.]+/),
+          action = req[1];
+
+      return this.callback(null, router.find(controller, action));
     }
   };
 
-  // Test that the actions for the above controllers
-  // map to GET requests at the specified URLs
-  for (var key1 in route_map) {
-    for (var key2 in route_map[key1]) {
-      describe(key1, function() {
-        var controller = key1;
+  context['should be accessible at ' + path] = function(err, route) {
+    route.pattern.should.equal(path);
+  };
 
-        describe(key2, function() {
-          var action = key2;
+  return context;
+}
 
-          it('should map to ' + route_map[controller][action], function() {
-            var route = router.find(controller, action);
+vows.describe('Routes').addBatch({
+  'Authentication controller': {
+    topic: 'AuthController',
 
-            route.method.should.equal('get');
-            route.pattern.should.equal(route_map[controller][action]);
-          });
-        });
-      });
-    }
+    'action login': resolvesTo('/login'),
+    'action signup': resolvesTo('/signup'),
+    'action logout': resolvesTo('/logout')
+  },
+
+  'Static pages controller': {
+    topic: 'PagesController',
+
+    'action main': resolvesTo('/')
   }
-});
+}).export(module);
