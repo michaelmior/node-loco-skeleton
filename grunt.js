@@ -33,9 +33,8 @@ module.exports = function(grunt) {
         node: true
       },
       test: {
-        globals: {
-          describe: true,
-          it: true
+        options: {
+          expr: true
         }
       }
     }

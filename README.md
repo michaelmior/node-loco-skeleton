@@ -18,6 +18,16 @@ Test coverage is currently very minimal, but more tests are in the works. You ca
 
 [![build status](https://secure.travis-ci.org/michaelmior/node-loco-skeleton.png)](http://travis-ci.org/michaelmior/node-loco-skeleton)
 
+## Linting
+
+You can lint the entire project with `grunt lint`.
+I find it useful to lint the code each time I commit to make sure I don't commit something which doesn't lint.
+To do this, just add the following to `.git/hooks/pre-commit` and mark it as executable.
+
+    #!/bin/sh
+    grunt lint
+
+
 ## Integrations
 
 Of course you can see dependencies in the `package.json`, but here's a brief overview.
@@ -27,4 +37,4 @@ Of course you can see dependencies in the `package.json`, but here's a brief ove
 * [Passport](http://passportjs.org/) for authentication, currently supporting local authentication with [passport-local](https://github.com/jaredhanson/passport-local.git) with Mongoose and [bcrypt](https://github.com/ncb000gt/node.bcrypt.js.git)
 * [Winston](https://github.com/flatiron/winston) for logging (including default Express logging
 * [Grunt](https://github.com/cowboy/grunt.git) for some handy build/test tools on the command line
-* [Mocha](https://github.com/visionmedia/mocha.git) and [should](https://github.com/visionmedia/should.js/) for testing
+* [Vows](https://github.com/cloudhead/vows.git) and [should](https://github.com/visionmedia/should.js/) for testing

@@ -42,4 +42,4 @@ vows.describe('Routes').addBatch({
 
     'action main': resolvesTo('/')
   }
-}).export(module);
+}).exportTo(module);
