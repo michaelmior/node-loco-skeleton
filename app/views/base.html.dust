@@ -21,6 +21,17 @@
         </ul>
       </div>
     </div>
+    <div id="messages" class="container">
+      {#flash.error}
+      <div class="alert alert-error">{.}</div>
+      {/flash.error}
+      {#flash.success}
+      <div class="alert alert-success">{.}</div>
+      {/flash.success}
+      {#flash.info}
+      <div class="alert alert-info">{.}</div>
+      {/flash.info}
+    </div>
     <div class="container">
       {+content/}
     </div>
