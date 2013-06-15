@@ -8,4 +8,13 @@ PagesController.main = function() {
   this.render();
 };
 
+PagesController.email = function() {
+  var res = this.res;
+  var Email = require('../models/email');
+  Email.sendEmail('michael.mior@gmail.com', 'Test', 'foo', {}, function() {
+    console.log(arguments);
+    res.send('Done!');
+  });
+};
+
 module.exports = PagesController;

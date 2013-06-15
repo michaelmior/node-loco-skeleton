@@ -19,9 +19,13 @@ module.exports = function() {
 
   // Register Dust as a template engine for html.
   this.engine('dust', require('consolidate').dust);
+  this.engine('txt', require('consolidate').dust);
 
   // Register the Mongoose adapter for our datastore
   this.datastore(require('locomotive-mongoose'));
+
+  // Email configuration. Transports are declared per-environment.
+  this.set('from email', 'Locomotive Test <test@example.com>');
 
   // Register formats for content negotiation.  Using content negotiation,
   // different formats can be served as needed by different clients.  For

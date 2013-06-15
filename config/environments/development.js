@@ -1,5 +1,6 @@
 var express = require('express'),
-    winston = require('winston');
+    winston = require('winston'),
+    nodemailer = require('nodemailer');
 
 module.exports = function() {
   this.set('mongodb uri', 'mongodb://localhost/test');
@@ -16,4 +17,6 @@ module.exports = function() {
   });
 
   this.use(express.errorHandler());
+
+  this.set('email transport', nodemailer.createTransport("STUB", {}));
 };
