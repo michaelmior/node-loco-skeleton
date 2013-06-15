@@ -1,24 +1,31 @@
 /*global module:false*/
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-vows');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Project configuration.
   grunt.initConfig({
-    lint: {
-      app: ['grunt.js', 'app/**/*.js', 'config/**/*.js'],
-      test: ['test/**/*.js']
-    },
     vows: {
       all: {
-        files: ['test/*.js'],
+        files: {src: ['test/*.js']},
         reporter: 'spec'
       }
     },
     watch: {
-      files: '<config:lint.files>',
-      tasks: 'lint test'
+      files: ['<%= jshint.app.src %>', '<%= jshint.test.src %>'],
+      tasks: ['jshint', 'test']
     },
     jshint: {
+      app: {
+        src:['grunt.js', 'app/**/*.js', 'config/**/*.js']
+      },
+      test: {
+        src:['test/**/*.js'],
+        options: {
+         expr: true
+        }
+      },
       options: {
         curly: true,
         eqeqeq: true,
@@ -31,11 +38,6 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         node: true
-      },
-      test: {
-        options: {
-          expr: true
-        }
       }
     }
   });
@@ -43,7 +45,8 @@ module.exports = function(grunt) {
   // Run tests using Mocha
   grunt.registerTask('test', 'vows');
 
-  // Default task.
-  grunt.registerTask('default', 'lint test');
+  grunt.registerTask('lint', 'jshint');
 
+  // Default task.
+  grunt.registerTask('default', ['lint', 'test']);
 };
