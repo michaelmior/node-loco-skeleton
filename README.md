@@ -1,5 +1,8 @@
 # node-loco-skeleton
 
+[![build status](https://secure.travis-ci.org/michaelmior/node-loco-skeleton.png)](http://travis-ci.org/michaelmior/node-loco-skeleton)
+[![Code Climate](https://codeclimate.com/github/michaelmior/node-loco-skeleton.png)](https://codeclimate.com/github/michaelmior/node-loco-skeleton)
+
 This project aims to be a fairly simple skeleton project built on top of the [Locomotive](http://locomotivejs.org/) framework for Node.js.
 It's mostly a learning exercise as I play around with Node, but maybe someone will find it useful.
 I couldn't find a good starting project that already included a template engine, user authentication, and other things that most dynamic Web apps need.
@@ -15,8 +18,6 @@ Once MongoDB is up and running, the following should suffice after cloning the r
     npm start
 
 Test coverage is currently very minimal, but more tests are in the works. You can run tests with `npm test`.
-
-[![build status](https://secure.travis-ci.org/michaelmior/node-loco-skeleton.png)](http://travis-ci.org/michaelmior/node-loco-skeleton)
 
 ## Linting
 
