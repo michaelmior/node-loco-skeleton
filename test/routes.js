@@ -5,6 +5,22 @@ var vows = require('vows'),
     Router = require('locomotive/lib/locomotive/router'),
     routes = require('../config/routes');
 
+vows.describe('Routes').addBatch({
+  'Authentication controller': {
+    topic: 'AuthController',
+
+    'action login': resolvesTo('/login'),
+    'action signup': resolvesTo('/signup'),
+    'action logout': resolvesTo('/logout')
+  },
+
+  'Static pages controller': {
+    topic: 'PagesController',
+
+    'action main': resolvesTo('/')
+  }
+}).exportTo(module);
+
 function resolvesTo(path) {
   var context = {
     topic: function(controller) {
@@ -27,19 +43,3 @@ function resolvesTo(path) {
 
   return context;
 }
-
-vows.describe('Routes').addBatch({
-  'Authentication controller': {
-    topic: 'AuthController',
-
-    'action login': resolvesTo('/login'),
-    'action signup': resolvesTo('/signup'),
-    'action logout': resolvesTo('/logout')
-  },
-
-  'Static pages controller': {
-    topic: 'PagesController',
-
-    'action main': resolvesTo('/')
-  }
-}).exportTo(module);
