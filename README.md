@@ -39,3 +39,7 @@ Of course you can see dependencies in the `package.json`, but here's a brief ove
 * [Winston](https://github.com/flatiron/winston) for logging (including default Express logging
 * [Grunt](https://github.com/cowboy/grunt.git) for some handy build/test tools on the command line
 * [Vows](https://github.com/cloudhead/vows.git) and [should](https://github.com/visionmedia/should.js/) for testing
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/michaelmior/node-loco-skeleton/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
