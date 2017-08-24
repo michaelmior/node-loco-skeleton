@@ -7,27 +7,27 @@
     "test": "grunt test"
   },
   "dependencies": {
-    "locomotive": "~0.3.1",
-    "express": "~3.0.0",
+    "locomotive": "~0.4.2",
+    "express": "~4.15.4",
     "connect-powered-by": "~0.1.0",
-    "dustjs-linkedin": "~1.0.0",
-    "consolidate": "~0.3.1",
-    "less-middleware": "~0.1.6",
-    "passport": "~0.1.12",
-    "passport-local": "~0.1.6",
-    "bcrypt": "~0.7.2",
-    "mongoose": "~3.1.2",
+    "dustjs-linkedin": "~2.7.5",
+    "consolidate": "~0.14.5",
+    "less-middleware": "~2.2.1",
+    "passport": "~0.4.0",
+    "passport-local": "~1.0.0",
+    "bcrypt": "~1.0.3",
+    "mongoose": "~4.11.8",
     "locomotive-mongoose": "~0.1.0",
-    "requireindex": "~0.1.8",
-    "winston": "~0.6.2",
+    "requireindex": "~1.1.0",
+    "winston": "~2.3.1",
     "connect-flash": "~0.1.0"
   },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "should": "~1.1.0",
-    "vows": "~0.7.0",
+    "grunt": "~1.0.1",
+    "should": "~11.2.1",
+    "vows": "~0.8.1",
     "grunt-vows": "~0.4.0",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-contrib-watch": "~0.4.4"
+    "grunt-contrib-jshint": "~1.1.0",
+    "grunt-contrib-watch": "~1.0.0"
   }
 }
