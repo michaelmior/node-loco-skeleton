@@ -1,5 +1,7 @@
 # node-loco-skeleton
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/michaelmior/node-loco-skeleton.svg)](https://greenkeeper.io/)
+
 [![build status](https://secure.travis-ci.org/michaelmior/node-loco-skeleton.png)](http://travis-ci.org/michaelmior/node-loco-skeleton)
 [![Code Climate](https://codeclimate.com/github/michaelmior/node-loco-skeleton.png)](https://codeclimate.com/github/michaelmior/node-loco-skeleton)
 
