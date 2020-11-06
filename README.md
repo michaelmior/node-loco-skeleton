@@ -1,6 +1,6 @@
 # node-loco-skeleton
 
-[![build status](https://secure.travis-ci.org/michaelmior/node-loco-skeleton.png)](http://travis-ci.org/michaelmior/node-loco-skeleton)
+[![build status](https://travis-ci.com/michaelmior/node-loco-skeleton.png)](http://travis-ci.com/michaelmior/node-loco-skeleton)
 [![Code Climate](https://codeclimate.com/github/michaelmior/node-loco-skeleton.png)](https://codeclimate.com/github/michaelmior/node-loco-skeleton)
 
 This project aims to be a fairly simple skeleton project built on top of the [Locomotive](http://locomotivejs.org/) framework for Node.js.
